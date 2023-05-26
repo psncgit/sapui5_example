@@ -1,0 +1,69 @@
+<core:FragmentDefinition xmlns="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m">
+    <m:Panel class="sapUiSmallMarginTop">
+        <m:headerToolbar>
+            <m:Toolbar>
+                <m:content>
+                    <m:HBox width="100%" justifyContent="SpaceBetween" alignItems="Center">
+                        <m:Title text="{i18n>relationTitle} Total: {/listInfo/totalCount}" level="H1" />
+                        <m:HBox>
+                            <m:Button icon="sap-icon://add" type="Ghost" press=".onPressAdd" />
+                            <m:Button icon="sap-icon://less" type="Ghost" enabled="{= ${/list}.length > 0 }" class="sapUiTinyMarginBegin" press=".onPressLess" />
+                        </m:HBox>
+                    </m:HBox>
+                </m:content>
+            </m:Toolbar>
+        </m:headerToolbar>
+        <m:content>
+            <Table id="relationTable" selectionMode="{/listInfo/selectionMode}" visibleRowCount="{/listInfo/rowCount}" rows="{/list}">
+                <columns>
+                    <Column width="5%" filterProperty="Idx" sortProperty="Idx">
+                        <label>
+                            <m:Label text="No." width="100%" textAlign="Center" />
+                        </label>
+                        <template>
+                            <m:Text text="{Idx}" width="100%" textAlign="Center" />
+                        </template>
+                    </Column>
+                    <Column width="20%" filterProperty="Relation" sortProperty="Relation">
+                        <label>
+                            <m:Label text="{i18n>relationType}" width="100%" textAlign="Center" />
+                        </label>
+                        <template>
+                            <m:ComboBox selectedKey="{Relation}" items="{ path: '/KdsvhList', templateShareable: false }">
+                                <core:Item text="{Ztext}" key="{Zcode}" />
+                            </m:ComboBox>
+                        </template>
+                    </Column>
+                    <Column width="25%" filterProperty="Ename" sortProperty="Ename">
+                        <label>
+                            <m:Label text="{i18n>relationName}" width="100%" textAlign="Center" />
+                        </label>
+                        <template>
+                            <m:Input value="{Ename}" />
+                        </template>
+                    </Column>
+                    <Column width="25%" filterProperty="Ename" sortProperty="Ename">
+                        <label>
+                            <m:Label text="{i18n>relationBirth}" width="100%" textAlign="Center" />
+                        </label>
+                        <template>
+                            <m:DatePicker dateValue="{Birth}" displayFormat="yyyy-MM-dd" />
+                        </template>
+                    </Column>
+                    <Column width="auto">
+                        <label>
+                            <m:Label text="{i18n>relationDetail}" width="100%" textAlign="Center" />
+                        </label>
+                        <template>
+                            <m:HBox justifyContent="Center">
+                                <m:Button icon="sap-icon://switch-classes" type="Emphasized" visible="{= !!${Relation} &amp;&amp; !!${Ename} }" press=".onPressDetail" />
+                            </m:HBox>
+                        </template>
+                    </Column>
+                </columns>
+            </Table>
+        </m:content>
+    </m:Panel>
+</core:FragmentDefinition>

@@ -1,0 +1,25 @@
+<mvc:View controllerName="sap.ui.demo.walkthrough.controller.App"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+    <Shell>
+        <App class="myAppDemoWT">
+            <pages>
+                <Page title="{i18n>homePageTitle}">
+                    <headerContent>
+                        <Select width="120px" selectedKey="ko" change=".onChangeLanguage">
+                            <items>
+                                <core:Item key="ko" text="Korean" />
+                                <core:Item key="en" text="English" />
+                            </items>
+                        </Select>
+                    </headerContent>
+                    <content>
+                        <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragment.Grid" type="XML" />
+                        <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragment.Table" type="XML" />
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

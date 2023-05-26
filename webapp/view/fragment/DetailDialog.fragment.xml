@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog binding="{/detail}" title="{Ename} {i18n>relationDetailTitle}" contentWidth="500px">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <HBox alignItems="Center">
+                    <Label text="{i18n>relationType}">
+                        <layoutData>
+                            <FlexItemData growFactor="1" maxWidth="100px" />
+                        </layoutData>
+                    </Label>
+                    <ComboBox width="100%" selectedKey="{Relation}" items="{ path: '/KdsvhList', templateShareable: false }">
+                        <layoutData>
+                            <FlexItemData growFactor="2" />
+                        </layoutData>
+                        <core:Item text="{Ztext}" key="{Zcode}" />
+                    </ComboBox>
+                </HBox>
+                <HBox alignItems="Center">
+                    <Label text="{i18n>relationName}">
+                        <layoutData>
+                            <FlexItemData growFactor="1" maxWidth="100px" />
+                        </layoutData>
+                    </Label>
+                    <Input width="100%" value="{Ename}">
+                        <layoutData>
+                            <FlexItemData growFactor="2" />
+                        </layoutData>
+                    </Input>
+                </HBox>
+                <HBox alignItems="Center">
+                    <Label text="{i18n>relationBirth}">
+                        <layoutData>
+                            <FlexItemData growFactor="1" maxWidth="100px" />
+                        </layoutData>
+                    </Label>
+                    <DatePicker width="100%" dateValue="{Birth}" displayFormat="yyyy-MM-dd">
+                        <layoutData>
+                            <FlexItemData growFactor="2" />
+                        </layoutData>
+                    </DatePicker>
+                </HBox>
+            </VBox>
+        </content>
+        <buttons>
+            <Button text="{i18n>closeButton}" press=".onPressCloseDialog" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

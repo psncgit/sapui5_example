@@ -1,0 +1,52 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:core="sap.ui.core">
+    <Panel headerText="{i18n>condolenceInfomation}">
+        <content>
+            <grid:CSSGrid gridTemplateColumns="1fr 3fr 1fr 3fr" gridGap="1px 0">
+                <VBox justifyContent="Center">
+                    <Label text="{i18n>condolenceType}"/>
+                </VBox>
+                <VBox>
+                    <ComboBox items="{/entry/Concode}" selectedKey="{/form/Concode}" width="250px" change=".onChangeConcode">
+                        <core:Item text="{Ztext}" key="{Zcode}" />
+                    </ComboBox>
+                </VBox>
+                <VBox justifyContent="Center">
+                    <Label text="{i18n>condolenceBirth}"/>
+                </VBox>
+                <VBox>
+                    <DatePicker dateValue="{/form/Zbirthday}" width="250px" displayFormat="yyyy-MM-dd" />
+                </VBox>
+                <VBox justifyContent="Center">
+                    <Label text="{i18n>condolenceReason}"/>
+                </VBox>
+                <VBox>
+                    <ComboBox items="{/entry/Conresn}" selectedKey="{/form/Conresn}" width="250px" editable="{= !!${/form/Concode} }" change=".onChangeConresn">
+                        <core:Item text="{Ztext}" key="{Zcode}" />
+                    </ComboBox>
+                </VBox>
+                <VBox justifyContent="Center">
+                    <Label text="{i18n>condolenceDate}"/>
+                </VBox>
+                <VBox>
+                    <DatePicker dateValue="{/form/Conddate}" width="250px" displayFormat="yyyy-MM-dd" />
+                </VBox>
+                <VBox justifyContent="Center">
+                    <Label text="{i18n>condolenceRelation}"/>
+                </VBox>
+                <VBox>
+                    <ComboBox items="{/entry/Kdsvh}" selectedKey="{/form/Kdsvh}" width="250px" editable="{= !!${/form/Conresn} }">
+                        <core:Item text="{Ztext}" key="{Zcode}" />
+                    </ComboBox>
+                </VBox>
+                <VBox justifyContent="Center">
+                    <Label text="{i18n>condolenceLocation}"/>
+                </VBox>
+                <VBox>
+                    <Input value="{/form/Zeloc}" width="80%" />
+                </VBox>
+            </grid:CSSGrid>
+        </content>
+    </Panel>
+</core:FragmentDefinition>
