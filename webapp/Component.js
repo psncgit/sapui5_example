@@ -2,6 +2,7 @@ sap.ui.define(
 	[
 		"sap/ui/core/UIComponent", //
 		"sap/ui/model/json/JSONModel",
+	"sap/ui/model/odata/type/Currency",
 	],
 	function (UIComponent, JSONModel) {
 		"use strict";
@@ -16,6 +17,32 @@ sap.ui.define(
 
 				// set data model
 				var oData = {
+					Currency: 'USD',
+					sample: {
+						Begda: new Date('2022-10-03'),
+						Endda: new Date('2023-09-20'),
+						listInfo: { rowCount: 2 },
+						list: [
+							{Datum: new Date('2023-06-22 15:46:00:000'),
+								CheckVal: '',
+								TypeVal: 'Payroll deduction',
+								LocationVal: 'Office(for payroll deduction)',
+								AmountVal: '52.36'},
+							{Datum: new Date('2023-06-22 15:04:00:000'),
+								CheckVal: '262',
+								TypeVal: 'Sale',
+								LocationVal: 'GA',
+								AmountVal: '52.36'},
+						],
+						Badge: '1234567',
+						ChargesN: '1',
+						ChargesT: '52.36',
+						PaymentsN: '1',
+						PaymentsT: '-52.36',
+						DatumS: new Date('2022-10-03'),
+						DatumE: new Date('2023-09-20'),
+						Balance: '104.72',
+					},
 					// 경조 기본정보
 					form: {
 						Concode: "", // 유형

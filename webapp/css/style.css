@@ -11,4 +11,33 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
     display: inline-block;
     font-weight: bold;
  }
+
+ .grid-form {
+   border-left: 1px solid #ddd;
+   border-right: 1px solid #ddd;
+   border-top: 1px solid #ddd;
+ }
  
+ .label-box {
+   height: 40px;
+   background-color: #f5f5f5;
+   padding: 10px 0 10px 10px;
+ }
+
+ .label-box .sapMLabel {
+   color: #333333;
+ }
+
+ .contents-box {
+   height: 40px;
+   padding: 10px 0 10px 10px;
+ }
+
+ .grid-item {
+   border-right: 1px solid #ddd;
+   border-bottom: 1px solid #ddd;
+ }
+
+ .grid-item.last {
+   border-right: transparent;
+ }

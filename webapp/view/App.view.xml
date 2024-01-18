@@ -6,17 +6,18 @@
         <App class="myAppDemoWT">
             <pages>
                 <Page title="{i18n>homePageTitle}">
-                    <headerContent>
+                    <!-- <headerContent>
                         <Select width="120px" selectedKey="ko" change=".onChangeLanguage">
                             <items>
                                 <core:Item key="ko" text="Korean" />
                                 <core:Item key="en" text="English" />
                             </items>
                         </Select>
-                    </headerContent>
+                    </headerContent> -->
                     <content>
-                        <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragment.Grid" type="XML" />
-                        <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragment.Table" type="XML" />
+                        <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragment.HmmaSample" type="XML" />
+                        <!-- <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragment.Grid" type="XML" />
+                        <core:Fragment fragmentName="sap.ui.demo.walkthrough.view.fragment.Table" type="XML" /> -->
                     </content>
                 </Page>
             </pages>

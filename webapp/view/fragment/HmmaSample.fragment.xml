@@ -1,0 +1,123 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:table="sap.ui.table"
+    xmlns:core="sap.ui.core">
+    <Panel headerText="Cafe Deduction Program" class="sapUiSmallMarginTop">
+        <content>
+            <VBox binding="{/sample}">
+                <grid:CSSGrid class="grid-form" gridTemplateColumns="1fr 1fr 1fr" gridGap="1px 0px">
+                    <HBox class="grid-item label-box last" alignItems="Center">
+                        <layoutData>
+                            <grid:GridItemLayoutData gridColumn="span 3" />
+                        </layoutData>
+                        <Label text="Select Transaction Date Range" />
+                    </HBox>
+                    <HBox class="grid-item contents-box" alignItems="Center">
+                        <Text text="Start Date : " />
+                        <DatePicker dateValue="{Begda}" displayFormat="yyyy-MM-dd" class="sapUiTinyMarginBegin" />
+                    </HBox>
+                    <HBox class="grid-item contents-box" alignItems="Center">
+                        <Text text="End Date : " />
+                        <DatePicker dateValue="{Endda}" displayFormat="yyyy-MM-dd" class="sapUiTinyMarginBegin" />
+                    </HBox>
+                    <HBox class="grid-item contents-box last" alignItems="Center">
+                        <Button text="Refresh" />
+                    </HBox>
+                </grid:CSSGrid>
+                <HBox class="sapUiLargeMarginTop">
+                    <Label text="Meal Transaction History" />
+                </HBox>
+                <table:Table selectionMode="None" visibleRowCount="{listInfo/rowCount}" rows="{list}">
+                    <table:columns>
+                        <table:Column width="20%" filterProperty="Idx" sortProperty="Idx">
+                            <table:label>
+                                <Label text="Date/Time" width="100%" textAlign="Center" />
+                            </table:label>
+                            <table:template>
+                                <Text text="{ path: 'Datum', type: 'sap.ui.model.type.DateTime', formatOptions: { pattern: 'MM/dd/yyyy HH:mm' } }" width="100%" textAlign="Center" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="15%" filterProperty="Relation" sortProperty="Relation">
+                            <table:label>
+                                <Label text="Check#" width="100%" textAlign="Center" />
+                            </table:label>
+                            <table:template>
+                                <Text text="{CheckVal}" width="100%" textAlign="Center" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="20%" filterProperty="Relation" sortProperty="Relation">
+                            <table:label>
+                                <Label text="Type" width="100%" textAlign="Center" />
+                            </table:label>
+                            <table:template>
+                                <Text text="{TypeVal}" width="100%" textAlign="Center" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="30%" filterProperty="Relation" sortProperty="Relation">
+                            <table:label>
+                                <Label text="Location" width="100%" textAlign="Center" />
+                            </table:label>
+                            <table:template>
+                                <Text text="{LocationVal}" width="100%" textAlign="Center" />
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="15%" filterProperty="Relation" sortProperty="Relation">
+                            <table:label>
+                                <Label text="Amount" width="100%" textAlign="Center" />
+                            </table:label>
+                            <table:template>
+                                <Text text="{ parts: ['AmountVal', '/Currency'], type: 'sap.ui.model.type.Currency', formatOptions: {currencyCode:false} }" width="100%" textAlign="Center" />
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
+                <grid:CSSGrid class="grid-form sapUiLargeMarginTop" gridTemplateColumns="2fr 2fr 2fr 1fr" gridGap="1px 0px">
+                    <HBox class="grid-item label-box" alignItems="Center">
+                        <Label text="Badge No" />
+                    </HBox>
+                    <HBox class="grid-item contents-box" alignItems="Center">
+                        <Text text="{Badge}" />
+                    </HBox>
+                    <HBox class="grid-item label-box" />
+                    <HBox class="grid-item contents-box last" />
+                    <HBox class="grid-item label-box" alignItems="Center">
+                        <Label text="Number of Charges" />
+                    </HBox>
+                    <HBox class="grid-item contents-box" alignItems="Center">
+                        <Text text="{ChargesN}" />
+                    </HBox>
+                    <HBox class="grid-item label-box" alignItems="Center">
+                        <Label text="Total Charges" />
+                    </HBox>
+                    <HBox class="grid-item contents-box last" alignItems="Center">
+                        <Text text="{ parts: ['ChargesT', '/Currency'], type: 'sap.ui.model.type.Currency', formatOptions: {currencyCode:false} }" />
+                    </HBox>
+                    <HBox class="grid-item label-box" alignItems="Center">
+                        <Label text="Number of Payments" />
+                    </HBox>
+                    <HBox class="grid-item contents-box" alignItems="Center">
+                        <Text text="{PaymentsN}" />
+                    </HBox>
+                    <HBox class="grid-item label-box" alignItems="Center">
+                        <Label text="Total Payments" />
+                    </HBox>
+                    <HBox class="grid-item contents-box last" alignItems="Center">
+                        <Text text="{ parts: ['PaymentsT', '/Currency'], type: 'sap.ui.model.type.Currency', formatOptions: {currencyCode:false} }" />
+                    </HBox>
+                    <HBox class="grid-item label-box" alignItems="Center">
+                        <Label text="Date Range" />
+                    </HBox>
+                    <HBox class="grid-item contents-box" alignItems="Center">
+                        <Text text="{ path: 'DatumS', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM/dd/yyyy' } } ~ { path: 'DatumE', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'MM/dd/yyyy' } }" />
+                    </HBox>
+                    <HBox class="grid-item label-box" alignItems="Center">
+                        <Label text="Transaction Balance" />
+                    </HBox>
+                    <HBox class="grid-item contents-box last" alignItems="Center">
+                        <Text text="{ parts: ['Balance', '/Currency'], type: 'sap.ui.model.type.Currency', formatOptions: {currencyCode:false} }" />
+                    </HBox>
+                </grid:CSSGrid>
+            </VBox>
+        </content>
+    </Panel>
+</core:FragmentDefinition>
