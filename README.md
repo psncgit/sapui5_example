@@ -909,11 +909,6 @@ oModel.remove("/URL(Key)", {
 
 - Install [Node.js](https://nodejs.org/ko/download/)
 
-| Project     | Node version |
-| ----------- | :----------: |
-| Yesco       |    **16**    |
-| DoosanTesna |    **16**    |
-
 ### 4.1.3. Visual Studio Code(vscode)
 
 - [Visual Studio Code setup guide](https://github.com/psncgit/sapui5_example/blob/main/vscode.md)
