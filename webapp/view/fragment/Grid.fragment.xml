@@ -8,7 +8,7 @@
                     <Label text="{i18n>condolenceType}"/>
                 </VBox>
                 <VBox>
-                    <ComboBox items="{/entry/Concode}" selectedKey="{/form/Concode}" width="250px" change=".onChangeConcode">
+                    <ComboBox items="{/entry/Concode}" selectedKey="{/form/Concode}" width="250px" change=".onConcodeComboBoxChange">
                         <core:Item text="{Ztext}" key="{Zcode}" />
                     </ComboBox>
                 </VBox>
@@ -22,7 +22,7 @@
                     <Label text="{i18n>condolenceReason}"/>
                 </VBox>
                 <VBox>
-                    <ComboBox items="{/entry/Conresn}" selectedKey="{/form/Conresn}" width="250px" editable="{= !!${/form/Concode} }" change=".onChangeConresn">
+                    <ComboBox items="{/entry/Conresn}" selectedKey="{/form/Conresn}" width="250px" editable="{= !!${/form/Concode} }" change=".onConresnComboBoxChange">
                         <core:Item text="{Ztext}" key="{Zcode}" />
                     </ComboBox>
                 </VBox>

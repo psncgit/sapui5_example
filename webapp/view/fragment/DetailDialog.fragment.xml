@@ -43,7 +43,7 @@
             </VBox>
         </content>
         <buttons>
-            <Button text="{i18n>closeButton}" press=".onPressCloseDialog" />
+            <Button text="{i18n>closeButton}" press=".onButtonCloseDialogPress" />
         </buttons>
     </Dialog>
 </core:FragmentDefinition>

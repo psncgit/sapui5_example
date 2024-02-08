@@ -8,15 +8,15 @@
                     <m:HBox width="100%" justifyContent="SpaceBetween" alignItems="Center">
                         <m:Title text="{i18n>relationTitle} Total: {/listInfo/totalCount}" level="H1" />
                         <m:HBox>
-                            <m:Button icon="sap-icon://add" type="Ghost" press=".onPressAdd" />
-                            <m:Button icon="sap-icon://less" type="Ghost" enabled="{= ${/list}.length > 0 }" class="sapUiTinyMarginBegin" press=".onPressLess" />
+                            <m:Button icon="sap-icon://add" type="Ghost" press=".onButtonAddPress" />
+                            <m:Button icon="sap-icon://less" type="Ghost" enabled="{= ${/list}.length > 0 }" class="sapUiTinyMarginBegin" press=".onButtonLessPress" />
                         </m:HBox>
                     </m:HBox>
                 </m:content>
             </m:Toolbar>
         </m:headerToolbar>
         <m:content>
-            <Table id="relationTable" selectionMode="{/listInfo/selectionMode}" visibleRowCount="{/listInfo/rowCount}" rows="{/list}">
+            <Table id="idRelationTable" selectionMode="{/listInfo/selectionMode}" visibleRowCount="{/listInfo/rowCount}" rows="{/list}">
                 <columns>
                     <Column width="5%" filterProperty="Idx" sortProperty="Idx">
                         <label>
@@ -58,7 +58,7 @@
                         </label>
                         <template>
                             <m:HBox justifyContent="Center">
-                                <m:Button icon="sap-icon://switch-classes" type="Emphasized" visible="{= !!${Relation} &amp;&amp; !!${Ename} }" press=".onPressDetail" />
+                                <m:Button icon="sap-icon://switch-classes" type="Emphasized" visible="{= !!${Relation} &amp;&amp; !!${Ename} }" press=".onButtonDetailPress" />
                             </m:HBox>
                         </template>
                     </Column>
