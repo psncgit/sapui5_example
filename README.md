@@ -916,4 +916,4 @@ oModel.remove("/URL(Key)", {
 
 ### 4.1.3. Visual Studio Code(vscode)
 
-- [Visual Studio Code setup guide](https://github.com/psncgit/psnc/blob/main/vscode.md)
+- [Visual Studio Code setup guide](https://github.com/psncgit/sapui5_example/blob/main/vscode.md)
